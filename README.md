@@ -1,1 +1,3 @@
 # JUNO
+
+A digital magazine

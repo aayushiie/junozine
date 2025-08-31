@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.roboto-italic {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "wdth" 100;
+}
+
+.roboto-mono-text {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-heading {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #141414;
+  color: #f8f8f8;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  max-width: full;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.activeLink {
+  color: #f8f8f8;
+  transition: color 300ms ease-in-out;
+}
+
+a:hover {
+  color: #f8f8f8;
+  transition: color 200ms ease-in-out;
+}
+
+.nonActiveLink {
+  color: #808080;
+  transition: color 300ms ease-in-out;
+}
+
+.image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -30%);
+  user-select: none;
+}
+
+
+

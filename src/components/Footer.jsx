@@ -18,6 +18,7 @@ const Footer = () => {
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com" className='roboto-mono-text text-[#FF4C65]' target='_blank' rel="noreferrer">email</a>
                         <a href="https://www.linkedin.com/in/junozine/" className='roboto-mono-text text-[#FF4C65]' target='_blank' rel="noreferrer">linkedin</a>
                         <a href="https://www.instagram.com/juno.zine_?igsh=MTRlbzdnY3RvOWVzdg==" className='roboto-mono-text text-[#FF4C65]' target='_blank' rel="noreferrer">instagram</a>
+                        <a href="https://www.threads.com/@juno.zine_" className='roboto-mono-text text-[#FF4C65]' target='_blank' rel="noreferrer">threads</a>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ const people = [
         name: "Aayushi Singh",
         role: "Founder & Editor-in-Chief",
         image: "/photos/people/1.jpg",
-        description: "Aayushi knew she wanted to be a software engineer before she could even spell “engineer.” Now, studying computer science, she juggles tech, books, writing, cat videos, and a million new ideas. When she's not journaling, crocheting, designing, blogging, or trying out some new hobby she spotted on Pinterest, she's probably walking with 70s music in her ears or staring at the stars, wondering what's next — until she inevitably trips on a rock. She dreams of making a change in her little corner of the world. But honestly? So far, she's only mastered textual blabbering. Still, that's a start, right?"
+        description: "Aayushi knew she wanted to be an engineer before she could even spell “engineer.” Now, studying computer science, she juggles tech, books, writing, cat videos, and occasional breakdowns. When she's not journaling, crocheting, designing, blogging, or trying out some new hobby she spotted on Pinterest, she's probably walking with 70s music in her ears or staring at the sky. She dreams of making a change in her little corner of the world. But honestly? So far, she's only mastered textual blabbering. Still, that's a start, right?"
     },
     {
         id: 2,

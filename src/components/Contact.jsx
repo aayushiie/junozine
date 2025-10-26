@@ -35,6 +35,13 @@ const Contact = () => {
           >
             Instagram
           </a>
+          <a
+            href="https://www.threads.com/@juno.zine_"
+            target="_blank"
+            className="roboto-mono-text text-[#FF4C65] border border-[#F8F8F8] px-3 py-2 sm:px-4 sm:py-2 uppercase hover:bg-[#FF4C65] hover:text-white transition"
+          >
+            Threads
+          </a>
         </div>
       </div>
     </>

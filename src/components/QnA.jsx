@@ -5,7 +5,7 @@ const allPrompts = [
   {
     question: "So, what is Juno?",
     answer:
-      "Juno is a space where creativity, code, and community meet. It's built to redefine creativity and showcase the work of the next generation of storytellers and artists in tech.",
+      "Juno is a space where creativity, code, and community meet. It's built to redefine creativity and showcase the work of the next generation of storytellers and artists in STEM.",
   },
   {
     question: "Who is it for?",
@@ -15,7 +15,7 @@ const allPrompts = [
   {
     question: "How to contribute?",
     answer:
-      "If you're in tech and identify as a woman or gender-expansive person, you can send us your essays, art, or experiments via email. Each issue is built from community submissions, and we'd love to share your story. Head to the ISSUES page for themes and submission guidelines.",
+      "If you're pursuing a career in STEM and identify as a woman or gender-expansive person, you can send us your poetry, essays, creative writings, or art via email. Each issue is built from community submissions, and we'd love to share your story. Head to the ISSUES page for themes and submission guidelines.",
   },
 ];
 
@@ -79,6 +79,7 @@ const container = {
   flexDirection: "column",
   margin: "20px auto",
   fontFamily: "'Roboto Mono', monospace",
+  textAlign: "center",
 };
 
 // Tabs bar

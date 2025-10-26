@@ -67,5 +67,11 @@ a:hover {
   user-select: none;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot {
+    display: none !important;
+  }
+}
+
 
 

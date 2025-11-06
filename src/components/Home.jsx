@@ -16,23 +16,23 @@ const Home = () => {
         </header>
 
         <main className="flex flex-col md:flex-row justify-between items-start 
-                         mx-4 md:mx-8 mt-10 gap-10 md:gap-8 min-h-[calc(100vh-32vw)]">
-          
-          <picture className="w-full md:w-1/2 flex items-start justify-end">
+                 mx-4 md:mx-8 mt-10 gap-10 md:gap-8 min-h-[calc(100vh-32vw)]">
+
+          <div className="w-full md:w-1/2 flex items-start justify-start order-2 md:order-1">
             <img
               src={mapImg}
               alt="map"
               className="max-w-full h-auto object-contain align-top"
             />
-          </picture>
-          
-          <div className="w-full md:w-1/3 roboto-italic md:text-left">
+          </div>
+
+          <div className="w-full md:w-1/3 roboto-italic md:text-right order-1 md:order-2">
             <p className="text-base md:text-lg leading-relaxed m-0">
               A digital magazine by girls and gender-expansive people in STEM, celebrating the intersection of art and technology.
             </p>
           </div>
-
         </main>
+
       </div>
 
       <Vision />

@@ -67,11 +67,16 @@ a:hover {
   user-select: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
+  .cursor-dot {
+    display: none !important;
+  }
+} */
+
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
   .cursor-dot {
     display: none !important;
   }
 }
-
 
 

@@ -13,7 +13,7 @@ const Contact = () => {
           Contact us and we'll get back to you as soon as possible.
         </p>
 
-        <div className="flex flex-wrap gap-4 sm:gap-6 mt-4 justify-center">
+        <div className="flex flex-wrap flex-col sm:flex-row gap-4 sm:gap-6 mt-4 justify-center">
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com"
             target="_blank"

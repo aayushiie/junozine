@@ -11,7 +11,7 @@ const Vision = () => {
                 </h1>
                 <div className='roboto-mono-text mx-4 mb-14'>
                     <p className='mx-8 md:mx-12 text-left md:text-center'>
-                        Juno is a digital magazine made by girls and gender-expansive people in STEM who were tired of choosing between being <i>“engineers”</i> or <i>“artists.”</i> We wanted a space where code could exist with poetry, where tech wasn't just logic but expression. So we made one. Juno is messy, loud, thoughtful, and full of heart. It's a patchwork of essays, poems, art, experiments, and stories stitched together on late-night desktops. With each issue, we bring the realities of working in STEM with the creativity that keeps us human, creating space for people to share their stories and see themselves reflected. It's a community built on the belief that tech is human, and humans make art.
+                        Juno is a digital magazine made by girls and gender-expansive people in STEM who were tired of choosing between being <i>“engineers”</i> and <i>“artists.”</i> We wanted a space where code could exist with poetry, where tech wasn't just logic but expression. So we made one. Juno is messy, loud, thoughtful, and full of heart. It's a patchwork of essays, poems, art, experiments, and stories stitched together on late-night desktops. With each issue, we bring the realities of working in STEM with the creativity that keeps us human, creating space for people to share their stories and see themselves reflected. It's a community built on the belief that tech is human, and humans make art.
                     </p>
                    
                 </div>

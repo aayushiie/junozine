@@ -13,6 +13,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "firebase": "^12.2.1",
     "framer-motion": "^12.23.12",
+    "gsap": "^3.14.1",
     "lucide-react": "^0.540.0",
     "motion": "^12.23.12",
     "react": "^19.1.0",

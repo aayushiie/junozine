@@ -208,11 +208,8 @@ export default function HoverGallery() {
                         className="
                     relative
                     w-full
-                    max-w-full
-                    sm:max-w-[420px]
-                    lg:max-w-[520px]
-                    aspect-[4/3]
-                    sm:aspect-[4/5]
+                    max-w-[520px]
+                    aspect-[4/5]
                     overflow-hidden
                     border
                     border-[#d9d1f1]

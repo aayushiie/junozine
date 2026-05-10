@@ -27,7 +27,7 @@ const Submission = () => {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-green-800 montserrat-heading"
+              className="hover:text-green-800 montserrat-text"
             >
             <AnimatedUnderline text="here" />
             </a>

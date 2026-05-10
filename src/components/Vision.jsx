@@ -127,18 +127,14 @@ export default function HoverGallery() {
                             onMouseEnter={() => setActive(index)}
                             onClick={() => setActive(index)}
                             className="
-                group
-
-                text-left
-
-                border-b
-                border-[#d9d1f1]
-
-                py-8
-
-                transition-all
-                duration-500
-              "
+                                group
+                                text-left
+                                border-b
+                                border-[#d9d1f1]
+                                py-8
+                                transition-all
+                                duration-500
+                                "
                         >
                             <div
                                 className="

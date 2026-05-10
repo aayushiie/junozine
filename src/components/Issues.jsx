@@ -20,7 +20,7 @@ const Issues = () => {
 
       {/* Right Column: Description */}
       <div className="flex-1">
-        <p className="roboto-mono-text sm:text-md leading-relaxed">
+        <p className="editorial-text sm:text-md leading-relaxed">
           The first keystroke that sets a program in motion. The shy hello before
           a friendship. The blinking cursor that hums into a sentence. Every
           journey has its first line.
@@ -31,7 +31,7 @@ const Issues = () => {
           felt like flying, the small choices that became seismic shifts, the
           first time you felt like you belonged—or didn't—and the momentum it
           sparked.
-          <br /><br />
+          <br />
           Send us your art, stories, poems, essays, and designs that trace the
           sparks, stumbles, and serendipities that became the first lines of
           something unforgettable.

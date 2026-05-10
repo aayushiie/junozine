@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimatedUnderline from './AnimatedUnderline'
 
 const Contact = () => {
   return (
@@ -9,7 +10,7 @@ const Contact = () => {
           GET IN TOUCH
         </h2>
 
-        <p className="text-sm sm:text-base text-white max-w-md sm:max-w-xl mt-4 mb-6">
+        <p className="text-sm sm:text-base max-w-md sm:max-w-xl mt-4 mb-6">
           Contact us and we'll get back to you as soon as possible.
         </p>
 
@@ -17,30 +18,30 @@ const Contact = () => {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com"
             target="_blank"
-            className="roboto-mono-text text-[#FF4C65] border border-[#F8F8F8] px-3 py-2 sm:px-4 sm:py-2 uppercase hover:bg-[#FF4C65] hover:text-white transition"
+            className="montserrat-heading px-3 py-2 sm:px-4 sm:py-2 uppercase transition hover:text-green-800"
           >
-            Email
-          </a>
-          <a
-            href="https://www.linkedin.com/company/junozine"
-            target="_blank"
-            className="roboto-mono-text text-[#FF4C65] border border-[#F8F8F8] px-3 py-2 sm:px-4 sm:py-2 uppercase hover:bg-[#FF4C65] hover:text-white transition"
-          >
-            LinkedIn
+                    <AnimatedUnderline text="email" />
           </a>
           <a
             href="https://www.instagram.com/juno.zine_?igsh=MTRlbzdnY3RvOWVzdg=="
             target="_blank"
-            className="roboto-mono-text text-[#FF4C65] border border-[#F8F8F8] px-3 py-2 sm:px-4 sm:py-2 uppercase hover:bg-[#FF4C65] hover:text-white transition"
+            className="montserrat-heading px-3 py-2 sm:px-4 sm:py-2 uppercase transition hover:text-green-800"
           >
-            Instagram
+                    <AnimatedUnderline text="instagram" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/junozine"
+            target="_blank"
+            className="montserrat-heading px-3 py-2 sm:px-4 sm:py-2 uppercase transition hover:text-green-800"
+          >
+                    <AnimatedUnderline text="linkedin" />
           </a>
           <a
             href="https://www.threads.com/@juno.zine_"
             target="_blank"
-            className="roboto-mono-text text-[#FF4C65] border border-[#F8F8F8] px-3 py-2 sm:px-4 sm:py-2 uppercase hover:bg-[#FF4C65] hover:text-white transition"
+            className="montserrat-heading px-3 py-2 sm:px-4 sm:py-2 uppercase transition hover:text-green-800"
           >
-            Threads
+                    <AnimatedUnderline text="threads" />
           </a>
         </div>
       </div>

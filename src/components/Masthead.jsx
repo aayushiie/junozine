@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import people from "../data/people";
 import slugify from "slugify";
@@ -15,6 +15,7 @@ function Image({ image, name, role, personName }) {
 
   const slug = slugify(personName, { lower: true, strict: true });
 
+
   return (
     <section className="h-screen snap-start flex flex-col items-center justify-center relative px-4 sm:px-6">
       <Link to={`/masthead/${slug}`}>
@@ -26,7 +27,6 @@ function Image({ image, name, role, personName }) {
         >
           <img
             src={image}
-            alt={typeof name === "string" ? name : ""}
             className="w-full h-full object-cover rounded-2xl"
           />
         </motion.div>
@@ -38,7 +38,7 @@ function Image({ image, name, role, personName }) {
         style={{ y }}
         className="mt-4 text-center max-w-xs"
       >
-        <Link to={`/masthead/${slug}`} className="text-[#FF4C65] text-xl sm:text-2xl font-bold font-['Roboto_Mono']">
+        <Link to={`/masthead/${slug}`} className="text-[#3e1e68] text-xl sm:text-2xl font-bold font-['Roboto_Mono']">
           {name}
         </Link>
         <div className="text-sm sm:text-base text-white mt-1">{role}</div>
@@ -55,6 +55,38 @@ export default function Masthead() {
     restDelta: 0.001,
   });
 
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+
+    const checkTheme = () => {
+
+      const theme =
+        document.documentElement.getAttribute(
+          "data-theme"
+        )
+
+      setIsDark(theme === "dark")
+    }
+
+    checkTheme()
+
+    const observer = new MutationObserver(
+      checkTheme
+    )
+
+    observer.observe(
+      document.documentElement,
+      {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      }
+    )
+
+    return () => observer.disconnect()
+
+  }, [])
+
   return (
     <div className="snap-y snap-mandatory">
       {people.map((person) => (
@@ -68,7 +100,15 @@ export default function Masthead() {
       ))}
       <motion.div
         style={{ scaleX }}
-        className="fixed left-0 right-0 h-1 bg-[#FF4C65] bottom-4 origin-left"
+        className={`
+        fixed
+        left-0
+        right-0
+        h-1
+        bottom-4
+        origin-left
+        ${isDark ? "bg-white" : "bg-[#3e1e68]"}
+      `}
       />
     </div>
   );

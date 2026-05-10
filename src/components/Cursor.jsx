@@ -53,7 +53,7 @@ export default function Cursor() {
             width: `${8 - i}px`,
             height: `${8 - i}px`,
             borderRadius: "50%",
-            background: "#FF4C65",
+            background: "#b1a1ed",
             pointerEvents: "none",
             transform: "translate(0, 0)",
             zIndex: 9999,

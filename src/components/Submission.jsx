@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimatedUnderline from './AnimatedUnderline'
 
 const Submission = () => {
   return (
@@ -26,9 +27,9 @@ const Submission = () => {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com"
               target="_blank"
               rel="noreferrer"
-              className="text-[#FF4C65] hover:underline roboto-mono-text"
+              className="hover:text-green-800 montserrat-heading"
             >
-              here
+            <AnimatedUnderline text="here" />
             </a>
             .
             <div>
@@ -55,7 +56,7 @@ const Submission = () => {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com"
           target="_blank"
           rel="noreferrer"
-          className="text-[#FF4C65] hover:underline roboto-mono-text"
+          className="underline hover:text-green-800 montserrat-heading"
         >
           junozine.magazine@gmail.com
         </a>

@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Issues from './components/Issues';
@@ -9,6 +8,9 @@ import MastheadProfile from './components/MastheadProfile';
 import Cursor from './components/Cursor';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import Loader from './components/Loader';
+import { useEffect, useState } from 'react';
+import InteractiveGradient from './components/InteractiveGradient';
 
 // Page wrapper
 const PageWrapper = ({ children }) => {
@@ -44,11 +46,31 @@ const AnimatedRoutes = () => {
 };
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Navbar />
-      <AnimatedRoutes />
-      <Cursor />
-    </BrowserRouter>
+    <>
+      <Loader isLoading={loading} />
+      {!loading && (
+        <BrowserRouter>
+          <div className="relative min-h-screen overflow-hidden">
+            <InteractiveGradient />
+            <div className="relative z-10">
+              <Navbar />
+              <AnimatedRoutes />
+              <Cursor />
+            </div>
+          </div>
+        </BrowserRouter>
+      )}
+    </>
   );
 }

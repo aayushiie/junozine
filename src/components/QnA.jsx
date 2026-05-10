@@ -1,155 +1,336 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react"
+import faqlight from "../assets/svg/faq-light.svg"
+import faqdark from "../assets/svg/faq-dark.svg"
 
-const allPrompts = [
-  {
-    question: "So, what is Juno?",
-    answer:
-      "Juno is a space where creativity, code, and community meet. It's built to redefine creativity and showcase the work of the next generation of storytellers and artists in STEM.",
-  },
-  {
-    question: "Who is it for?",
-    answer:
-      "It's for anyone who's ever felt too creative for tech and too technical for art, for people who are tired of choosing between being a maker or a dreamer, an engineer or an artist. It's for those who want a place where all those pieces fit together, and where you can exist within a community.",
-  },
-  {
-    question: "How to contribute?",
-    answer:
-      "If you're pursuing a career in STEM and identify as a woman or gender-expansive person, you can send us your poetry, essays, creative writings, or art via email. Each issue is built from community submissions, and we'd love to share your story. Head to the ISSUES page for themes and submission guidelines.",
-  },
-];
+import {
+  AnimatePresence,
+  motion,
+} from "framer-motion"
 
-const [q1, q2, q3] = allPrompts;
-const tabs = [q1, q2, q3];
+import {
+  Plus,
+  Minus,
+} from "lucide-react"
+
+const faqs = [
+  {
+    question:
+      "Who can contribute?",
+
+    answer:
+      "Students, artists, researchers, writers, designers, developers, anyone who identifies as a woman or gender-expansive person is welcome to contribute.",
+  },
+
+  {
+    question:
+      "What kind of work do you publish?",
+
+    answer:
+      "We publish essays, poetry, short fiction, visual art, photography, research-inspired pieces, personal reflections, interviews, and experimental work that blends disciplines and aligns with the theme of our issue.",
+  },
+
+  {
+    question:
+      "Is Juno only for people in STEM?",
+
+    answer:
+      "For now, yes. Juno was created to build a creative space specifically for people in STEM. We started it to highlight the artistic work of people whose creativity often exists alongside technical disciplines.",
+  },
+
+  {
+    question:
+      "Can I submit more than one piece?",
+
+    answer:
+      "Yes, you may submit multiple works. Please send each submission in a separate email so we can review every piece individually.",
+  },
+
+  {
+    question:
+      "Previously published work?",
+
+    answer:
+      "At the moment, we prefer unpublished work unless stated otherwise.",
+  },
+
+  {
+    question:
+      "What rights do contributors retain?",
+
+    answer:
+      "Creators retain ownership of their work. By submitting, you grant Juno permission to publish your piece in our issue and promote it with proper credit.",
+  },
+]
 
 export default function QnA() {
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [active, setActive] =
+    useState(null)
+
+  const toggleFAQ = (index) => {
+    setActive(
+      active === index ? null : index
+    )
+  }
+
+  const [isDark, setIsDark] = useState(false)
+    
+      useEffect(() => {
+    
+        const checkTheme = () => {
+    
+          const theme =
+            document.documentElement.getAttribute(
+              "data-theme"
+            )
+    
+          setIsDark(theme === "dark")
+        }
+    
+        checkTheme()
+    
+        const observer = new MutationObserver(
+          checkTheme
+        )
+    
+        observer.observe(
+          document.documentElement,
+          {
+            attributes: true,
+            attributeFilter: ["data-theme"],
+          }
+        )
+    
+        return () => observer.disconnect()
+    
+      }, [])
 
   return (
-    <div style={container}>
-      <nav style={nav}>
-        <ul style={tabsContainer}>
-          {tabs.map((item) => (
-            <motion.li
-              key={item.question}
-              initial={false}
-              animate={{
-                backgroundColor:
-                  item === selectedTab ? "#F8F8F8" : "transparent",
-                color: item === selectedTab ? "#141414" : "#F8F8F8",
-              }}
-              style={tab}
-              onClick={() => setSelectedTab(item)}
+    <>
+      {/* HEADING */}
+      <div className="
+        px-6
+        md:px-12
+        pb-4
+        my-10
+        md:my-14
+        text-center
+        relative">
+
+        <img
+            src={`${isDark ? faqdark : faqlight}`}
+            alt=""
+            className="
+                absolute
+                left-1/2
+                top-20
+                md:-top-24
+                w-14
+                md:w-24
+                opacity-70
+                rotate-[-10deg]
+                pointer-events-none
+                select-none
+            "
+          />
+
+        <h1
+          className="
+            editorial-heading
+          text-[4.5rem]
+          sm:text-[6rem]
+          md:text-[8rem]
+          leading-[0.9]
+          tracking-[-0.08em]
+          "
+        >
+          FAQ
+        </h1>
+      </div>
+    
+    <section
+      className="
+        min-h-screen
+        mx-10
+        px-6
+        md:px-12
+        py-24
+        rounded-3xl
+        bg-[var(--bg)]
+      "
+    >
+      
+
+      {/* FAQ LIST */}
+      <div
+        className="
+          max-w-5xl
+          mx-auto
+        "
+      >
+        {faqs.map((faq, index) => {
+          const isOpen =
+            active === index
+
+          return (
+            <div
+              key={index}
+              className="
+                border-b
+                border-[#d9d1f1]
+              "
             >
-              {item.question}
-              {item === selectedTab && (
-                <motion.div style={underline} layoutId="underline" />
-              )}
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
-      <main style={answerContainer}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedTab.answer}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            style={answer}
-          >
-            {selectedTab.answer}
-          </motion.div>
-        </AnimatePresence>
-      </main>
-    </div>
-  );
+              {/* QUESTION */}
+              <button
+                onClick={() =>
+                  toggleFAQ(index)
+                }
+                className="
+                  w-full
+
+                  flex
+                  items-center
+                  justify-between
+
+                  gap-8
+
+                  py-8
+
+                  text-left
+
+                  group
+                "
+              >
+                <h2
+                  className={`
+                    montserrat-heading
+
+                    text-[1.6rem]
+                    md:text-[2.6rem]
+
+                    leading-[1]
+
+                    tracking-[-0.05em]
+
+                    transition-all
+                    duration-300
+
+                    ${
+                      isOpen
+                        ? "text-[var(--text)]"
+                        : "text-[#8f88b8]"
+                    }
+                  `}
+                >
+                  {faq.question}
+                </h2>
+
+                <div
+                  className="
+                    shrink-0
+
+                    text-[#8f88b8]
+
+                    transition-transform
+                    duration-300
+
+                    group-hover:rotate-90
+                  "
+                >
+                  {isOpen ? (
+                    <Minus
+                      size={24}
+                      strokeWidth={1.5}
+                    />
+                  ) : (
+                    <Plus
+                      size={24}
+                      strokeWidth={1.5}
+                    />
+                  )}
+                </div>
+              </button>
+
+              {/* ANSWER */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{
+                      height: 0,
+                      opacity: 0,
+                    }}
+
+                    animate={{
+                      height: "auto",
+                      opacity: 1,
+                    }}
+
+                    exit={{
+                      height: 0,
+                      opacity: 0,
+                    }}
+
+                    transition={{
+                      duration: 0.45,
+                      ease: [
+                        0.22,
+                        1,
+                        0.36,
+                        1,
+                      ],
+                    }}
+
+                    className="
+                      overflow-hidden
+                    "
+                  >
+                    <motion.div
+                      initial={{
+                        y: 20,
+                      }}
+
+                      animate={{
+                        y: 0,
+                      }}
+
+                      exit={{
+                        y: -10,
+                      }}
+
+                      transition={{
+                        duration: 0.4,
+                      }}
+
+                      className="
+                        pb-8
+                        pr-12
+                        md:pr-24
+                      "
+                    >
+                      <p
+                        className="
+                          roboto-italic
+
+                          text-[var(--text)]
+
+                          text-base
+                          md:text-lg
+
+                          leading-relaxed
+
+                          max-w-3xl
+                        "
+                      >
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+    </>
+  )
 }
-
-const container = {
-  width: "90%",          // mobile first
-  maxWidth: "600px",
-  minHeight: "auto",     // let content define height
-  borderRadius: 10,
-  background: "#141414",
-  overflow: "hidden",
-  boxShadow: "none",
-  display: "flex",
-  flexDirection: "column",
-  margin: "20px auto",
-  fontFamily: "'Roboto Mono', monospace",
-  textAlign: "center",
-};
-
-// Tabs bar
-const nav = {
-  background: "#141414",
-  padding: "5px 5px 0",
-  borderRadius: 10,
-  borderBottomLeftRadius: 0,
-  borderBottomRightRadius: 0,
-  borderBottom: "1px solid #FF4C65",
-  position: "relative",
-  overflow: "hidden",
-};
-
-const tabsStyles = {
-  listStyle: "none",
-  padding: 0,
-  margin: 0,
-  fontWeight: 500,
-  fontSize: "clamp(12px, 3vw, 14px)", // responsive font size
-};
-
-const tabsContainer = {
-  ...tabsStyles,
-  display: "flex",
-  flexWrap: "wrap", // wrap tabs on small screens
-  width: "100%",
-};
-
-const tab = {
-  ...tabsStyles,
-  borderRadius: 5,
-  width: "100%",
-  padding: "10px 15px",
-  position: "relative",
-  background: "transparent",
-  cursor: "pointer",
-  minHeight: 40,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flex: 1,
-  minWidth: 0,
-  userSelect: "none",
-  color: "#F8F8F8",
-  transition: "background-color 0.3s, color 0.3s",
-  lineHeight: 1.2,
-  boxSizing: "border-box",
-};
-
-const underline = {
-  position: "absolute",
-  bottom: -2,
-  left: 0,
-  right: 0,
-  height: 2,
-  background: "#FF4C65",
-};
-
-const answerContainer = {
-  padding: 20,
-  flex: 1,
-  fontSize: "clamp(14px, 2vw, 16px)", // responsive font size
-  color: "#F8F8F8",
-  overflowY: "auto",
-  lineHeight: 1.4,
-  fontWeight: 400,
-  textAlign: "center",
-};
-
-const answer = {
-  whiteSpace: "pre-wrap",
-};

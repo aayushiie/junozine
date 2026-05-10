@@ -1,9 +1,4 @@
-import React, {
-  useLayoutEffect,
-  useRef,
-  useEffect,
-  useState
-} from "react"
+import React, { useLayoutEffect, useRef, useEffect, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import starlight from "../assets/svg/star-light.svg"
@@ -47,13 +42,13 @@ export default function About() {
         ease: "none",
         force3D: true,
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: `+=${totalScroll}`,
-          scrub: 0.5,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
+        trigger: sectionRef.current,
+        start: "top top",
+        end: `+=${totalScroll}`,
+        scrub: 0.5,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         },
       })
     }, sectionRef)
@@ -62,70 +57,70 @@ export default function About() {
   }, [])
 
   const [isDark, setIsDark] = useState(false)
-  
-    useEffect(() => {
-  
-      const checkTheme = () => {
-  
-        const theme =
-          document.documentElement.getAttribute(
-            "data-theme"
-          )
-  
-        setIsDark(theme === "dark")
+
+  useEffect(() => {
+
+    const checkTheme = () => {
+
+      const theme =
+        document.documentElement.getAttribute(
+          "data-theme"
+        )
+
+      setIsDark(theme === "dark")
+    }
+
+    checkTheme()
+
+    const observer = new MutationObserver(
+      checkTheme
+    )
+
+    observer.observe(
+      document.documentElement,
+      {
+        attributes: true,
+        attributeFilter: ["data-theme"],
       }
-  
-      checkTheme()
-  
-      const observer = new MutationObserver(
-        checkTheme
-      )
-  
-      observer.observe(
-        document.documentElement,
-        {
-          attributes: true,
-          attributeFilter: ["data-theme"],
-        }
-      )
-  
-      return () => observer.disconnect()
-  
-    }, [])
+    )
+
+    return () => observer.disconnect()
+
+  }, [])
 
   return (
-  <section>
+    <section>
 
-    {/* HEADING */}
-    <div
-      className="
+      {/* HEADING */}
+      <div
+        className="
         px-6
         md:px-12
         pb-4
         text-center
         relative
       "
-    >
+      >
 
-    {/* DOODLE */}
-  <img
-    src={`${isDark ? stardark : starlight}`}
-    alt=""
-    className="
-        absolute
-        left-1/2
-        top-20
-        md:-top-24
-        w-14
-        md:w-24
-        opacity-70
-        rotate-[-10deg]
-        pointer-events-none
-        select-none
-    "
-  />
-      <h1
-        className="
+        {/* DOODLE */}
+        <img
+          src={`${isDark ? stardark : starlight}`}
+          alt=""
+          className="
+            absolute
+            left-1/2
+            top-20
+            md:-top-24
+            w-14
+            md:w-24
+            opacity-70
+            rotate-[-10deg]
+            pointer-events-none
+            select-none
+        "
+        />
+        <h1
+          className="
           editorial-heading
           text-[4.5rem]
           sm:text-[6rem]
@@ -133,23 +128,23 @@ export default function About() {
           leading-[0.9]
           tracking-[-0.08em]
         "
-      >
-        About Us
-      </h1>
-    </div>
+        >
+          About Us
+        </h1>
+      </div>
 
-    {/* HORIZONTAL SCROLL */}
-    <section
-      ref={sectionRef}
-      className="
+      {/* HORIZONTAL SCROLL */}
+      <section
+        ref={sectionRef}
+        className="
         relative
         h-screen
         overflow-hidden
       "
-    >
-      <div
-        ref={trackRef}
-        className="
+      >
+        <div
+          ref={trackRef}
+          className="
           flex
           items-center
           gap-10
@@ -159,11 +154,11 @@ export default function About() {
           w-max
           will-change-transform
         "
-      >
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="
+        >
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="
               relative
               w-[78vw]
               md:w-[64vw]
@@ -171,10 +166,10 @@ export default function About() {
               md:h-[68vh]
               shrink-0
             "
-          >
-            {/* OUTSIDE NUMBER */}
-            <div
-              className="
+            >
+              {/* OUTSIDE NUMBER */}
+              <div
+                className="
                 absolute
                 left-[-4rem]
                 bottom-9
@@ -188,13 +183,13 @@ export default function About() {
                 whitespace-nowrap
                 z-20
               "
-            >
-              0{index + 1} / 03
-            </div>
+              >
+                0{index + 1} / 03
+              </div>
 
-            {/* CARD */}
-            <div
-              className="
+              {/* CARD */}
+              <div
+                className="
                 relative
                 w-full
                 h-full
@@ -202,8 +197,8 @@ export default function About() {
                 border
                 border-[#d9d1f1]
               "
-              style={{
-                background: `
+                style={{
+                  background: `
                   linear-gradient(
                     135deg,
                     #f8f4ff 0%,
@@ -212,30 +207,30 @@ export default function About() {
                     #e8ddff 100%
                   )
                 `,
-                willChange: "transform",
-              }}
-            >
-              {/* SOFT LIGHT */}
-              <div
-                className="
+                  willChange: "transform",
+                }}
+              >
+                {/* SOFT LIGHT */}
+                <div
+                  className="
                   absolute
                   inset-0
                   opacity-40
                 "
-                style={{
-                  background: `
+                  style={{
+                    background: `
                     radial-gradient(
                       circle at top left,
                       rgba(255,255,255,0.9),
                       transparent 40%
                     )
                   `,
-                }}
-              />
+                  }}
+                />
 
-              {/* CONTENT */}
-              <div
-                className="
+                {/* CONTENT */}
+                <div
+                  className="
                   relative
                   z-10
                   h-full
@@ -253,16 +248,16 @@ export default function About() {
                   gap-10
                   md:gap-16
                 "
-              >
-                {/* LEFT COLUMN */}
-                <div
-                  className="
+                >
+                  {/* LEFT COLUMN */}
+                  <div
+                    className="
                     flex
                     items-start
                   "
-                >
-                  <h2
-                    className="
+                  >
+                    <h2
+                      className="
                       montserrat-heading
                       text-[2.5rem]
                       md:text-[4rem]
@@ -272,20 +267,20 @@ export default function About() {
                       text-[#3e1e68]
                       max-w-[320px]
                     "
-                  >
-                    {card.title}
-                  </h2>
-                </div>
+                    >
+                      {card.title}
+                    </h2>
+                  </div>
 
-                {/* RIGHT COLUMN */}
-                <div
-                  className="
+                  {/* RIGHT COLUMN */}
+                  <div
+                    className="
                     flex
                     items-end
                   "
-                >
-                  <p
-                    className="
+                  >
+                    <p
+                      className="
                       roboto-italic
                       text-[#4c3b73]/90
                       text-[0.95rem]
@@ -293,17 +288,17 @@ export default function About() {
                       leading-relaxed
                       max-w-[520px]
                     "
-                  >
-                    {card.text}
-                  </p>
+                    >
+                      {card.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
 
-  </section>
-)
+    </section>
+  )
 }

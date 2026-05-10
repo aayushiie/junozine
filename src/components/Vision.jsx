@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react"
-import {
-    motion,
-    AnimatePresence,
-} from "framer-motion"
-import img1 from "../assets/images/img1.png"
-import img2 from "../assets/images/img2.png"
-import img3 from "../assets/images/img3.png"
-import img4 from "../assets/images/img4.png"
-import magazinelight from "../assets/svg/magazine-light.svg"
-import magazinedark from "../assets/svg/magazine-dark.svg"
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import img1 from "../assets/images/img1.png";
+import img2 from "../assets/images/img2.png";
+import img3 from "../assets/images/img3.png";
+import img4 from "../assets/images/img4.png";
+import magazinelight from "../assets/svg/magazine-light.svg";
+import magazinedark from "../assets/svg/magazine-dark.svg";
 
 const items = [
     {
@@ -30,59 +27,49 @@ const items = [
         title: "Deadline",
         image: img4,
     },
-]
+];
 
 export default function HoverGallery() {
-    const [active, setActive] = useState(0)
-    const [isDark, setIsDark] = useState(false)
+    const [active, setActive] = useState(0);
+    const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-
         const checkTheme = () => {
+            const theme = document.documentElement.getAttribute("data-theme");
 
-            const theme =
-                document.documentElement.getAttribute(
-                    "data-theme"
-                )
+            setIsDark(theme === "dark");
+        };
 
-            setIsDark(theme === "dark")
-        }
+        checkTheme();
 
-        checkTheme()
+        const observer = new MutationObserver(checkTheme);
 
-        const observer = new MutationObserver(
-            checkTheme
-        )
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-theme"],
+        });
 
-        observer.observe(
-            document.documentElement,
-            {
-                attributes: true,
-                attributeFilter: ["data-theme"],
-            }
-        )
-
-        return () => observer.disconnect()
-
-    }, [])
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <section
             className="
-        min-h-screen
-        px-6
-        md:px-12
-        py-24
-      "
+                min-h-screen
+                px-6
+                md:px-12
+                py-24
+            "
         >
             {/* HEADING */}
-            <div className="px-6
-        md:px-12
-        pb-4
-        text-center
-        relative
-        mb-20">
-
+            <div
+                className="px-6
+                md:px-12
+                pb-4
+                text-center
+                relative
+                mb-20"
+            >
                 <img
                     src={`${isDark ? magazinedark : magazinelight}`}
                     alt=""
@@ -137,12 +124,8 @@ export default function HoverGallery() {
                     {items.map((item, index) => (
                         <button
                             key={index}
-                            onMouseEnter={() =>
-                                setActive(index)
-                            }
-                            onClick={() =>
-                                setActive(index)
-                            }
+                            onMouseEnter={() => setActive(index)}
+                            onClick={() => setActive(index)}
                             className="
                 group
 
@@ -211,63 +194,55 @@ export default function HoverGallery() {
                 {/* RIGHT SIDE IMAGE */}
                 <div
                     className="
-            sticky
-            top-24
-
-            hidden
-            lg:flex
-
-            justify-center
-            items-start
-          "
-                >
+                relative
+                lg:sticky
+                top-0
+                lg:top-24
+                flex
+                justify-center
+                items-start
+                mt-10
+                lg:mt-0
+            ">
                     <div
                         className="
-              relative
-
-              w-full
-              max-w-[520px]
-
-              aspect-[4/5]
-
-              overflow-hidden
-
-              border
-              border-[#d9d1f1]
-
-              bg-[#f3edff]
-            "
+                    relative
+                    w-full
+                    max-w-full
+                    sm:max-w-[420px]
+                    lg:max-w-[520px]
+                    aspect-[4/3]
+                    sm:aspect-[4/5]
+                    overflow-hidden
+                    border
+                    border-[#d9d1f1]
+                    bg-[#f3edff]
+                    "
                     >
                         {/* IMAGE */}
                         <AnimatePresence mode="wait">
                             <motion.img
                                 key={items[active].image}
-
                                 src={items[active].image}
                                 alt={items[active].title}
-
                                 initial={{
                                     y: 80,
                                     opacity: 0,
                                     scale: 1.05,
                                 }}
-
                                 animate={{
                                     y: 0,
                                     opacity: 1,
                                     scale: 1.02,
                                 }}
-
                                 exit={{
                                     y: -40,
                                     opacity: 0,
                                 }}
-
                                 transition={{
                                     duration: 0.7,
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
-
                                 className="
                                     absolute
                                     inset-0
@@ -297,5 +272,5 @@ export default function HoverGallery() {
                 </div>
             </div>
         </section>
-    )
+    );
 }

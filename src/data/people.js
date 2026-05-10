@@ -4,7 +4,7 @@ const people = [
         name: "Aayushi Singh",
         role: "Founder & Editor-in-Chief",
         image: "/photos/people/1.jpg",
-        description: "Aayushi likes to do a little of everything. "
+        description: "Aayushi likes to do a little of everything. She enjoys long conversations and writing sentences that probably could've been shorter. Most days, you'll find her surviving on caffeine, curiosity, and the false belief that everything will eventually make sense."
     },
     {
         id: 2,

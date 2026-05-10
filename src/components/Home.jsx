@@ -88,17 +88,17 @@ const Home = () => {
   }, [])
 
   return (
-<>
-    <div ref={comp}>
-      <section className="
-      min-h-screen
-      flex
-      flex-col
-      justify-between
-      mx-6">
+    <>
+      <div ref={comp}>
+        <section className="
+          min-h-screen
+          flex
+          flex-col
+          justify-center
+          mx-6">
 
-        <header
-          className="
+          <header
+            className="
             w-full
             flex
             justify-center
@@ -106,11 +106,11 @@ const Home = () => {
             overflow-hidden
             mt-6
           "
-        >
+          >
 
-          <h1
-            ref={titleRef}
-            className="
+            <h1
+              ref={titleRef}
+              className="
               montserrat-heading
               text-[14vw]
               sm:text-[16vw]
@@ -120,16 +120,16 @@ const Home = () => {
               uppercase
               text-[color:var(--text)]
             "
-          >
-            JU
-          </h1>
+            >
+              JU
+            </h1>
 
 
-          <img
-            ref={imageRef}
-            src={`${isDark ? logodark : logolight}`}
-            alt="Juno Logo"
-            className="
+            <img
+              ref={imageRef}
+              src={`${isDark ? logodark : logolight}`}
+              alt="Juno Logo"
+              className="
               w-[16vw]
               min-w-[120px]
               max-w-[240px]
@@ -139,11 +139,11 @@ const Home = () => {
               mx-[-1vw]
               z-20
             "
-          />
+            />
 
 
-          <h1
-            className="
+            <h1
+              className="
               montserrat-heading
               text-[14vw]
               sm:text-[16vw]
@@ -153,15 +153,15 @@ const Home = () => {
               uppercase
               text-[color:var(--text)]
             "
-          >
-            NO
-          </h1>
+            >
+              NO
+            </h1>
 
-        </header>
+          </header>
 
 
-        <main
-          className="
+          <main
+            className="
             flex-1
             flex
             justify-start
@@ -170,32 +170,32 @@ const Home = () => {
             md:mx-8
     ">
 
-          <div
-            ref={textRef}
-            className="
+            <div
+              ref={textRef}
+              className="
               w-full
               md:w-1/3
               roboto-italic
               md:text-left
               text-[color:var(--text)]
             "
-          >
+            >
 
-            <p className="text-base md:text-lg leading-relaxed m-0">
-              A digital magazine by girls and gender-expansive
-              people in STEM, celebrating the intersection
-              of art and technology.
-            </p>
+              <p className="text-base md:text-lg leading-relaxed m-0">
+                A digital magazine by girls and gender-expansive
+                people in STEM, celebrating the intersection
+                of art and technology.
+              </p>
 
-          </div>
-        </main>
+            </div>
+          </main>
 
-      </section>
-    </div>
-    <About />
+        </section>
+      </div>
+      <About />
       <Vision />
       <Footer />
-      </>
+    </>
   )
 }
 

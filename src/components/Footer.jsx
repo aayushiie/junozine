@@ -10,23 +10,17 @@ const Footer = () => {
     const [isDark, setIsDark] = useState(false)
 
     useEffect(() => {
-
         const checkTheme = () => {
-
             const theme =
                 document.documentElement.getAttribute(
                     "data-theme"
                 )
-
             setIsDark(theme === "dark")
         }
-
         checkTheme()
-
         const observer = new MutationObserver(
             checkTheme
         )
-
         observer.observe(
             document.documentElement,
             {
@@ -34,7 +28,6 @@ const Footer = () => {
                 attributeFilter: ["data-theme"],
             }
         )
-
         return () => observer.disconnect()
 
     }, [])
@@ -42,10 +35,10 @@ const Footer = () => {
     return (
         <>
             <QnA />
-<div className='flex flex-col justify-center items-center gap-y-8'>
+            <div className='flex flex-col justify-center items-center gap-y-8'>
 
-            {/* HEADING */}
-            <div className="
+                {/* HEADING */}
+                <div className="
                     px-6
                     md:px-12
                     pb-4
@@ -54,10 +47,10 @@ const Footer = () => {
                     text-center
                     relative">
 
-                <img
-                    src={`${isDark ? contactdark : contactlight}`}
-                    alt=""
-                    className="
+                    <img
+                        src={`${isDark ? contactdark : contactlight}`}
+                        alt=""
+                        className="
                             absolute
                             left-1/2
                             top-20
@@ -69,10 +62,10 @@ const Footer = () => {
                             pointer-events-none
                             select-none
                         "
-                />
+                    />
 
-                <h1
-                    className="
+                    <h1
+                        className="
                         editorial-heading
                       text-[4.5rem]
                       sm:text-[6rem]
@@ -80,29 +73,29 @@ const Footer = () => {
                       leading-[0.9]
                       tracking-[-0.08em]
                       "
-                >
-                    Contact
-                </h1>
-            </div>
+                    >
+                        Contact
+                    </h1>
+                </div>
 
-            <div className='flex justify-center items-center gap-x-6'>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
-                    <AnimatedUnderline text="email" />
-                </a>
-                <a href="https://www.instagram.com/juno.zine_?igsh=MTRlbzdnY3RvOWVzdg==" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
-                    <AnimatedUnderline text="instagram" />
-                </a>
-                <a href="https://www.linkedin.com/company/junozine" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
-                    <AnimatedUnderline text="linkedin" />
-                </a>
-                <a href="https://www.threads.com/@juno.zine_" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
-                    <AnimatedUnderline text="threads" />
-                </a>
-            </div>
+                <div className='flex justify-center items-center gap-x-6'>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=junozine.magazine@gmail.com" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
+                        <AnimatedUnderline text="email" />
+                    </a>
+                    <a href="https://www.instagram.com/juno.zine_?igsh=MTRlbzdnY3RvOWVzdg==" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
+                        <AnimatedUnderline text="instagram" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/junozine" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
+                        <AnimatedUnderline text="linkedin" />
+                    </a>
+                    <a href="https://www.threads.com/@juno.zine_" className='montserrat-heading hover:text-green-800' target='_blank' rel="noreferrer">
+                        <AnimatedUnderline text="threads" />
+                    </a>
+                </div>
 
-            <div className='roboto-mono-text text-center mb-6'>
-                JUNO MAGAZINE &copy; {date.getFullYear()}
-            </div>
+                <div className='roboto-mono-text text-center mb-6'>
+                    JUNO MAGAZINE &copy; {date.getFullYear()}
+                </div>
             </div>
         </>
     )

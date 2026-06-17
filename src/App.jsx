@@ -5,6 +5,7 @@ import Contact from './components/Contact';
 import Masthead from './components/Masthead';
 import Submission from './components/Submission';
 import MastheadProfile from './components/MastheadProfile';
+import Events from './components/Events';
 import Cursor from './components/Cursor';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
         <Route path="/masthead/:slug" element={<PageWrapper><MastheadProfile /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/submissionguidelines" element={<PageWrapper><Submission /></PageWrapper>} />
+        <Route path="/events" element={<PageWrapper><Events /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );

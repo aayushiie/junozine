@@ -50,6 +50,15 @@ const Navbar = () => {
             className={(e) =>
               e.isActive ? "activeLink" : "nonActiveLink"
             }
+            to={"/events"}
+          >
+            <AnimatedUnderline text="events" />
+          </NavLink>
+
+          <NavLink
+            className={(e) =>
+              e.isActive ? "activeLink" : "nonActiveLink"
+            }
             to={"/masthead"}
           >
             <AnimatedUnderline text="masthead" />

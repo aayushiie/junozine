@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1 from "../assets/images/img1.png";
+import img1 from "../assets/images/img1.webp";
 import img2 from "../assets/images/img2.png";
-import img3 from "../assets/images/img3.png";
 import img4 from "../assets/images/img4.png";
+import img5 from "../assets/images/img5.png";
 import magazinelight from "../assets/svg/magazine-light.svg";
 import magazinedark from "../assets/svg/magazine-dark.svg";
 
 const items = [
     {
-        title: "Theme",
+        title: "i01: Theme",
         image: img1,
     },
 
@@ -18,14 +18,19 @@ const items = [
         image: img2,
     },
 
+    // {
+    //     title: "Moodboard",
+    //     image: img3,
+    // },
+
     {
-        title: "Moodboard",
-        image: img3,
+        title: "Submission",
+        image: img4,
     },
 
     {
-        title: "Deadline",
-        image: img4,
+        title: "Workshop",
+        image: img5,
     },
 ];
 
@@ -97,7 +102,7 @@ export default function HoverGallery() {
           tracking-[-0.08em]
           "
                 >
-                    Issue 01
+                    Recent
                 </h1>
             </div>
 

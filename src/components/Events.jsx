@@ -8,7 +8,7 @@ const Events = () => {
           Events
         </h1>
 
-        <article className="max-w-xl">
+        <article className="max-w-xl roboto-mono-text">
           <p className="text-sm uppercase tracking-widest mb-2">
             Workshop · 2026
           </p>
